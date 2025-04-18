@@ -23,7 +23,7 @@ function ExperiencesComponent() {
         borderRadius: "24px",
       }}
       onClick={() =>
-        navigate(`/experience/${booking.title}`, {
+        navigate(`/room1/${booking.title}`, {
           state: { id: booking.id, title: booking.title },
         })
       }

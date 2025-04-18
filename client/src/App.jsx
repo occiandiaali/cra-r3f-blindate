@@ -3,9 +3,13 @@ import NavComponent from "./components/Nav/NavComponent";
 import HomeComponent from "./components/Home/HomeComponent";
 import AccountComponent from "./components/Account/AccountComponent";
 import ExperiencesComponent from "./components/Experiences/ExperiencesComponent";
-import ExperienceComponent from "./components/Experiences/ExperienceComponent";
+//import ExperienceComponent from "./components/Experiences/ExperienceComponent";
+import Room1 from "./components/Experiences/Room1";
 import DashboardComponent from "./components/Dashboard/DashboardComponent";
 import NotFound from "./components/NotFound/NotFound";
+
+import { Suspense } from "react";
+import Loading from "./components/Loading";
 
 import "./App.css";
 
@@ -25,7 +29,14 @@ function App() {
         <Route path="/experiences" element={<ExperiencesComponent />}>
           {/* <Route path='/details' element={} /> */}
         </Route>
-        <Route path="/experience/:id" element={<ExperienceComponent />}>
+        <Route
+          path="/room1/:id"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Room1 />
+            </Suspense>
+          }
+        >
           {/* <Route path='/details' element={} /> */}
         </Route>
         <Route path="/dashboard" element={<DashboardComponent />}>
