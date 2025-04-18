@@ -1,4 +1,4 @@
-function GLBLoadError() {
+function GLBLoadError({ error }) {
   return (
     <section
       style={{
@@ -10,6 +10,7 @@ function GLBLoadError() {
       }}
     >
       <h4>Oops! Something went wrong!</h4>
+      <p>Maybe because of: ${error}</p>
       <p>Please, click LEAVE, then try to rejoin the room.</p>
     </section>
   );
